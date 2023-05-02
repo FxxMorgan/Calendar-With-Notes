@@ -1,0 +1,132 @@
+/* estilos.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#calendario {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#calendario table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#calendario th, #calendario td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Contenedor principal del calendario */
+.calendario-container {
+    position: relative;
+    min-height: 500px; /* Altura mínima para mantener el espacio necesario para el calendario */
+}
+
+/* Botonera de navegación */
+.calendario-navegacion {
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    bottom: 30%;
+}
+
+/* Animaciones generales */
+
+
+/* Animación de transición */
+.animacion-estacion {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
+    animation: desplazamiento 1s linear forwards;
+}
+
+@keyframes desplazamiento {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Animaciones de estaciones */
+.animacion.otonio {
+    background-image: url('imagenes/hojas-secas.png');
+    animation: hojasSecas 10s linear infinite;
+}
+
+.animacion.invierno {
+    background-image: url('imagenes/gotas-agua.png');
+    animation: gotasAgua 10s linear infinite;
+}
+
+.animacion.primavera {
+    background-image: url('imagenes/flores.png');
+    animation: flores 10s linear infinite;
+}
+
+.animacion.verano {
+    background-image: url('imagenes/sol.png');
+    animation: sol 10s linear infinite;
+}
+
+@keyframes hojasSecas {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+@keyframes gotasAgua {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+@keyframes flores {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+@keyframes sol {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+td.con-nota {
+    position: relative;
+}
+
+td.con-nota::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: blue;
+    border-radius: 70%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
